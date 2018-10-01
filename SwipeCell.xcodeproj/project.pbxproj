@@ -10,6 +10,11 @@
 		95F70B13216200980034C5AD /* SwipeCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F70B09216200970034C5AD /* SwipeCell.framework */; };
 		95F70B18216200980034C5AD /* SwipeCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B17216200980034C5AD /* SwipeCellTests.swift */; };
 		95F70B1A216200980034C5AD /* SwipeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 95F70B0C216200970034C5AD /* SwipeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95F70B25216200B40034C5AD /* SwipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B23216200B40034C5AD /* SwipeCell.swift */; };
+		95F70B26216200B40034C5AD /* SwipeCellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B24216200B40034C5AD /* SwipeCellAction.swift */; };
+		95F70B292162036B0034C5AD /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B282162036B0034C5AD /* UIColor+Extensions.swift */; };
+		9BA6BCEB2CB05B7671795833 /* Pods_SwipeCellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC568DD555C1A278890A57A0 /* Pods_SwipeCellTests.framework */; };
+		FB57DCBCBE3E12A194B4BB73 /* Pods_SwipeCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7314FC9565B7F05665B6D9 /* Pods_SwipeCell.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +28,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		277BFB89919D9EA7F1D5C327 /* Pods-SwipeCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeCell.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeCell/Pods-SwipeCell.release.xcconfig"; sourceTree = "<group>"; };
+		350D33B533299108490CE4BA /* Pods-SwipeCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeCell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeCell/Pods-SwipeCell.debug.xcconfig"; sourceTree = "<group>"; };
 		95F70B09216200970034C5AD /* SwipeCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipeCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F70B0C216200970034C5AD /* SwipeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeCell.h; sourceTree = "<group>"; };
 		95F70B0D216200970034C5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F70B12216200980034C5AD /* SwipeCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F70B17216200980034C5AD /* SwipeCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellTests.swift; sourceTree = "<group>"; };
 		95F70B19216200980034C5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F70B23216200B40034C5AD /* SwipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCell.swift; sourceTree = "<group>"; };
+		95F70B24216200B40034C5AD /* SwipeCellAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellAction.swift; sourceTree = "<group>"; };
+		95F70B282162036B0034C5AD /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		DD7314FC9565B7F05665B6D9 /* Pods_SwipeCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipeCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1CF119FED1AA255CCEAC9AA /* Pods-SwipeCellTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeCellTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeCellTests/Pods-SwipeCellTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB486BD8A9413CFF6ADFB27E /* Pods-SwipeCellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeCellTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeCellTests/Pods-SwipeCellTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FC568DD555C1A278890A57A0 /* Pods_SwipeCellTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipeCellTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB57DCBCBE3E12A194B4BB73 /* Pods_SwipeCell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +59,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F70B13216200980034C5AD /* SwipeCell.framework in Frameworks */,
+				9BA6BCEB2CB05B7671795833 /* Pods_SwipeCellTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E9DFA44C2741C96D98BAC7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				350D33B533299108490CE4BA /* Pods-SwipeCell.debug.xcconfig */,
+				277BFB89919D9EA7F1D5C327 /* Pods-SwipeCell.release.xcconfig */,
+				FB486BD8A9413CFF6ADFB27E /* Pods-SwipeCellTests.debug.xcconfig */,
+				E1CF119FED1AA255CCEAC9AA /* Pods-SwipeCellTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		95F70AFF216200970034C5AD = {
 			isa = PBXGroup;
 			children = (
 				95F70B0B216200970034C5AD /* SwipeCell */,
 				95F70B16216200980034C5AD /* SwipeCellTests */,
 				95F70B0A216200970034C5AD /* Products */,
+				7E9DFA44C2741C96D98BAC7A /* Pods */,
+				B5AA9BE4C1996CD602E6888D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +100,9 @@
 		95F70B0B216200970034C5AD /* SwipeCell */ = {
 			isa = PBXGroup;
 			children = (
+				95F70B272162035F0034C5AD /* Aux */,
+				95F70B23216200B40034C5AD /* SwipeCell.swift */,
+				95F70B24216200B40034C5AD /* SwipeCellAction.swift */,
 				95F70B0C216200970034C5AD /* SwipeCell.h */,
 				95F70B0D216200970034C5AD /* Info.plist */,
 			);
@@ -84,6 +116,23 @@
 				95F70B19216200980034C5AD /* Info.plist */,
 			);
 			path = SwipeCellTests;
+			sourceTree = "<group>";
+		};
+		95F70B272162035F0034C5AD /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				95F70B282162036B0034C5AD /* UIColor+Extensions.swift */,
+			);
+			path = Aux;
+			sourceTree = "<group>";
+		};
+		B5AA9BE4C1996CD602E6888D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD7314FC9565B7F05665B6D9 /* Pods_SwipeCell.framework */,
+				FC568DD555C1A278890A57A0 /* Pods_SwipeCellTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95F70B1D216200980034C5AD /* Build configuration list for PBXNativeTarget "SwipeCell" */;
 			buildPhases = (
+				0E90EDF9AFAF5D5387DE8637 /* [CP] Check Pods Manifest.lock */,
 				95F70B04216200970034C5AD /* Headers */,
 				95F70B05216200970034C5AD /* Sources */,
 				95F70B06216200970034C5AD /* Frameworks */,
@@ -122,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95F70B20216200980034C5AD /* Build configuration list for PBXNativeTarget "SwipeCellTests" */;
 			buildPhases = (
+				91D2BAD9729327695B9A75C3 /* [CP] Check Pods Manifest.lock */,
 				95F70B0E216200980034C5AD /* Sources */,
 				95F70B0F216200980034C5AD /* Frameworks */,
 				95F70B10216200980034C5AD /* Resources */,
+				65F548C0AD6AA2CF430BAFD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,11 +241,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E90EDF9AFAF5D5387DE8637 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwipeCell-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65F548C0AD6AA2CF430BAFD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwipeCellTests/Pods-SwipeCellTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/UIImageColors/UIImageColors.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageColors.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwipeCellTests/Pods-SwipeCellTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91D2BAD9729327695B9A75C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwipeCellTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		95F70B05216200970034C5AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F70B26216200B40034C5AD /* SwipeCellAction.swift in Sources */,
+				95F70B292162036B0034C5AD /* UIColor+Extensions.swift in Sources */,
+				95F70B25216200B40034C5AD /* SwipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +468,7 @@
 		};
 		95F70B1E216200980034C5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 350D33B533299108490CE4BA /* Pods-SwipeCell.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +494,7 @@
 		};
 		95F70B1F216200980034C5AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 277BFB89919D9EA7F1D5C327 /* Pods-SwipeCell.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -390,7 +520,9 @@
 		};
 		95F70B21216200980034C5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB486BD8A9413CFF6ADFB27E /* Pods-SwipeCellTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7F6BJZY5B3;
 				INFOPLIST_FILE = SwipeCellTests/Info.plist;
@@ -408,7 +540,9 @@
 		};
 		95F70B22216200980034C5AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1CF119FED1AA255CCEAC9AA /* Pods-SwipeCellTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7F6BJZY5B3;
 				INFOPLIST_FILE = SwipeCellTests/Info.plist;
