@@ -62,7 +62,7 @@ extension SwipeCell {
         
         // MARK: - Initializers
         // ========== INITIALIZERS ==========
-        override init(frame: CGRect) {
+        public override init(frame: CGRect) {
             super.init(frame: frame)
             backgroundColor = UIColor(hex: 0x111111)
             isUserInteractionEnabled = true
@@ -77,7 +77,7 @@ extension SwipeCell {
             setPreset(.normal)
         }
         
-        convenience init(id: String, withPreset preset: Preset) {
+        public convenience init(id: String, withPreset preset: Preset) {
             self.init(frame: .zero)
             setPreset(preset)
             self.id = id
