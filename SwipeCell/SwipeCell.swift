@@ -25,7 +25,7 @@ open class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     // ========== PROPERTIES ==========
-    var swipeCellItems: [SwipeCell.Item] {
+    open var swipeCellItems: [SwipeCell.Item] {
         return []
     }
     
@@ -90,7 +90,7 @@ open class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     // MARK: - Initializers
     // ========== INITIALIZERS ==========
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.clipsToBounds = true
         
