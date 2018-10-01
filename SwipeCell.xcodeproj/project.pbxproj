@@ -11,7 +11,7 @@
 		95F70B18216200980034C5AD /* SwipeCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B17216200980034C5AD /* SwipeCellTests.swift */; };
 		95F70B1A216200980034C5AD /* SwipeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 95F70B0C216200970034C5AD /* SwipeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95F70B25216200B40034C5AD /* SwipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B23216200B40034C5AD /* SwipeCell.swift */; };
-		95F70B26216200B40034C5AD /* SwipeCellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B24216200B40034C5AD /* SwipeCellAction.swift */; };
+		95F70B26216200B40034C5AD /* SwipeCell.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B24216200B40034C5AD /* SwipeCell.Item.swift */; };
 		95F70B292162036B0034C5AD /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F70B282162036B0034C5AD /* UIColor+Extensions.swift */; };
 		9BA6BCEB2CB05B7671795833 /* Pods_SwipeCellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC568DD555C1A278890A57A0 /* Pods_SwipeCellTests.framework */; };
 		FB57DCBCBE3E12A194B4BB73 /* Pods_SwipeCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7314FC9565B7F05665B6D9 /* Pods_SwipeCell.framework */; };
@@ -37,7 +37,7 @@
 		95F70B17216200980034C5AD /* SwipeCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellTests.swift; sourceTree = "<group>"; };
 		95F70B19216200980034C5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F70B23216200B40034C5AD /* SwipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCell.swift; sourceTree = "<group>"; };
-		95F70B24216200B40034C5AD /* SwipeCellAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellAction.swift; sourceTree = "<group>"; };
+		95F70B24216200B40034C5AD /* SwipeCell.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCell.Item.swift; sourceTree = "<group>"; };
 		95F70B282162036B0034C5AD /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		DD7314FC9565B7F05665B6D9 /* Pods_SwipeCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipeCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CF119FED1AA255CCEAC9AA /* Pods-SwipeCellTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeCellTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeCellTests/Pods-SwipeCellTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				95F70B272162035F0034C5AD /* Aux */,
 				95F70B23216200B40034C5AD /* SwipeCell.swift */,
-				95F70B24216200B40034C5AD /* SwipeCellAction.swift */,
+				95F70B24216200B40034C5AD /* SwipeCell.Item.swift */,
 				95F70B0C216200970034C5AD /* SwipeCell.h */,
 				95F70B0D216200970034C5AD /* Info.plist */,
 			);
@@ -319,7 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F70B26216200B40034C5AD /* SwipeCellAction.swift in Sources */,
+				95F70B26216200B40034C5AD /* SwipeCell.Item.swift in Sources */,
 				95F70B292162036B0034C5AD /* UIColor+Extensions.swift in Sources */,
 				95F70B25216200B40034C5AD /* SwipeCell.swift in Sources */,
 			);

@@ -1,6 +1,6 @@
 //
 //  SwipeCell.swift
-//  Comic_Collector
+//  SwipeCell
 //
 //  Created by Dennis Müller on 10.04.18.
 //  Copyright © 2018 Dennis Müller. All rights reserved.
@@ -9,38 +9,39 @@
 import UIKit
 import SnapKit
 
-public enum ActionPanState {
-    case isClosed
-    case isMoving
-    case hasSnappedOpen
-}
-
-public enum SwipeCellActionState {
-    case isClosed
-    case isMoving
-    case hasSnappedOpen
-}
-
-public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
+/** SwipeCell class. Override this if you want to use it.
+    - Every instance of `SwipeCell` comes with a property `holderView` **which replaces contentView.**
+                  Put everything inside `holderView`.
+    - By default, the swipe functionality is disabled. You can enable it by setting the property `swipeEnabled = true`
+    - To add swipe items, override `swipeCellItems`.
+ */
+open class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
-    
+    private enum ItemState {
+        case isClosed
+        case isMoving
+        case hasSnappedOpen
+    }
     
     // MARK: - Properties
     // ========== PROPERTIES ==========
-    var swipeCellActions: [SwipeCell.Action] {
+    var swipeCellItems: [SwipeCell.Item] {
         return []
     }
     
     private var cellSwipeConfirmed: Bool = false
-    public weak var actionDelegate: SwipeCellActionDelegate? = nil
-    fileprivate var holderViewWidthXConstraint: Constraint? = nil
-    fileprivate var holderViewOffset: CGFloat = 0 {
+    
+    /// Item delegate. Will be called when the user taps on an item.
+    public weak var itemDelegate: SwipeCellItemDelegate? = nil
+    
+    private var holderViewWidthXConstraint: Constraint? = nil
+    private var holderViewOffset: CGFloat = 0 {
         didSet {
             holderViewWidthXConstraint?.update(offset: holderViewOffset)
         }
     }
     
-    private var actionState: SwipeCellActionState {
+    private var itemState: ItemState {
         switch holderViewOffset {
         case 0:
             return .isClosed
@@ -52,24 +53,24 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     }
     
     public var areButtonsSnappedOpen: Bool {
-        return actionState == .hasSnappedOpen
+        return itemState == .hasSnappedOpen
     }
     
-    public var swipeWidth: CGFloat {
+    open var swipeWidth: CGFloat {
         return 2 * contentView.frame.width / 3
     }
     
-    fileprivate var panGestureRecognizer: UIPanGestureRecognizer!
-    fileprivate var tapGestureRecognizer: UITapGestureRecognizer!
+    private var panGestureRecognizer: UIPanGestureRecognizer!
+    private var tapGestureRecognizer: UITapGestureRecognizer!
     
-    public var swipeActionEnabled: Bool = false {
+    public var swipeEnabled: Bool = false {
         didSet {
-            tapGestureRecognizer.isEnabled = swipeActionEnabled
-            panGestureRecognizer.isEnabled = swipeActionEnabled
+            tapGestureRecognizer.isEnabled = swipeEnabled
+            panGestureRecognizer.isEnabled = swipeEnabled
         }
     }
     
-    fileprivate lazy var buttonStackView: UIStackView = {
+    private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -120,7 +121,7 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError()
     }
     // ====================
@@ -132,15 +133,13 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     // MARK: - Functions
     // ========== FUNCTIONS ==========
-    public func swipeHasBegun() {}
-    
     @objc private func otherCellWantsToSwipeOpen(notif: Notification) {
         closeButtons()
         
         UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [], animations: {
             self.layoutIfNeeded()
         }, completion: { (finished) in
-            if self.actionState == .isClosed {
+            if self.itemState == .isClosed {
                 self.removeButtons()
             }
         })
@@ -149,15 +148,15 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     @objc private func handle(tap: UITapGestureRecognizer) {
         let location = tap.location(in: buttonStackView)
         for holder in buttonStackView.arrangedSubviews {
-            if let action = holder as? SwipeCell.Action, action.frame.contains(location) {
-                actionDelegate?.didTapOnAction(action)
+            if let item = holder as? SwipeCell.Item, item.frame.contains(location) {
+                itemDelegate?.didTapOnItem(item)
                 
                 // close
                 closeButtons()
                 UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [], animations: {
                     self.layoutIfNeeded()
                 }, completion: { (finished) in
-                    if self.actionState == .isClosed {
+                    if self.itemState == .isClosed {
                         self.removeButtons()
                     }
                 })
@@ -172,7 +171,7 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         switch pan.state {
         case .began:
             
-            if actionState == .isClosed {
+            if itemState == .isClosed {
                 cellSwipeConfirmed = false // first set it to false!
                 
                 // check if its a cell swipe
@@ -181,9 +180,8 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
                 if verticalToHorizontalVelocity.isInfinite || abs(verticalToHorizontalVelocity) < 0.28 {
                     cellSwipeConfirmed = true
                     createButtonsFromDelegate()
-                    swipeHasBegun()
                     
-                    // Post a notification to all cells with open swipeActions
+                    // Post a notification to all cells with open swipeItems
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SwipeCellOpenNotification"), object: nil)
                     
                     (superview as! UICollectionView).isScrollEnabled = false
@@ -191,9 +189,8 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
                     pan.isEnabled = false
                     pan.isEnabled = true
                 }
-            } else if actionState == .hasSnappedOpen {
+            } else if itemState == .hasSnappedOpen {
                 (superview as! UICollectionView).isScrollEnabled = false
-                swipeHasBegun()
             }
             
         case .changed:
@@ -221,7 +218,7 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [], animations: {
                 self.layoutIfNeeded()
             }, completion: { (finished) in
-                if self.actionState == .isClosed {
+                if self.itemState == .isClosed {
                     self.removeButtons()
                 }
             })
@@ -232,8 +229,8 @@ public class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     fileprivate func createButtonsFromDelegate() {
         removeButtons() // to be safe
-        for action in swipeCellActions {
-            buttonStackView.addArrangedSubview(action)
+        for item in swipeCellItems {
+            buttonStackView.addArrangedSubview(item)
         }
     }
     fileprivate func removeButtons() {

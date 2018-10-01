@@ -1,49 +1,40 @@
 PODS:
   - SnapKit (4.0.1)
-  - SwifterSwift (4.4.0):
-    - SwifterSwift/AppKit (= 4.4.0)
-    - SwifterSwift/CoreGraphics (= 4.4.0)
-    - SwifterSwift/CoreLocation (= 4.4.0)
-    - SwifterSwift/Foundation (= 4.4.0)
-    - SwifterSwift/MapKit (= 4.4.0)
-    - SwifterSwift/SpriteKit (= 4.4.0)
-    - SwifterSwift/SwiftStdlib (= 4.4.0)
-    - SwifterSwift/UIKit (= 4.4.0)
-  - SwifterSwift/AppKit (4.4.0)
-  - SwifterSwift/CoreGraphics (4.4.0)
-  - SwifterSwift/CoreLocation (4.4.0)
-  - SwifterSwift/Foundation (4.4.0)
-  - SwifterSwift/MapKit (4.4.0)
-  - SwifterSwift/SpriteKit (4.4.0)
-  - SwifterSwift/SwiftStdlib (4.4.0)
-  - SwifterSwift/UIKit (4.4.0)
+  - SwifterSwift (4.6.0):
+    - SwifterSwift/AppKit (= 4.6.0)
+    - SwifterSwift/CoreGraphics (= 4.6.0)
+    - SwifterSwift/CoreLocation (= 4.6.0)
+    - SwifterSwift/Foundation (= 4.6.0)
+    - SwifterSwift/MapKit (= 4.6.0)
+    - SwifterSwift/SpriteKit (= 4.6.0)
+    - SwifterSwift/SwiftStdlib (= 4.6.0)
+    - SwifterSwift/UIKit (= 4.6.0)
+  - SwifterSwift/AppKit (4.6.0)
+  - SwifterSwift/CoreGraphics (4.6.0)
+  - SwifterSwift/CoreLocation (4.6.0)
+  - SwifterSwift/Foundation (4.6.0)
+  - SwifterSwift/MapKit (4.6.0)
+  - SwifterSwift/SpriteKit (4.6.0)
+  - SwifterSwift/SwiftStdlib (4.6.0)
+  - SwifterSwift/UIKit (4.6.0)
   - UIImageColors (2.0.1)
 
 DEPENDENCIES:
-  - SnapKit (from `https://github.com/SnapKit/SnapKit.git`, branch `develop`)
+  - SnapKit
   - SwifterSwift
   - UIImageColors
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - SnapKit
     - SwifterSwift
     - UIImageColors
 
-EXTERNAL SOURCES:
-  SnapKit:
-    :branch: develop
-    :git: https://github.com/SnapKit/SnapKit.git
-
-CHECKOUT OPTIONS:
-  SnapKit:
-    :commit: 6af44ff4c901df25c06e12651bec9a3a56dce0a5
-    :git: https://github.com/SnapKit/SnapKit.git
-
 SPEC CHECKSUMS:
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
-  SwifterSwift: 1ce0e31801ddd3a2bd3256626275425adb01067a
+  SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   UIImageColors: c83669aff7ceb55a3b3f2c398f3b5c14632a267b
 
-PODFILE CHECKSUM: 5d9d5e257fbb9165a5cf54a487723364a4937f82
+PODFILE CHECKSUM: 68953726312cf1a35a1eedbd25cbe04a52a66aef
 
 COCOAPODS: 1.5.3
