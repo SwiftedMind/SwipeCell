@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIColor {
+internal extension UIColor {
     var readableTextColor: UIColor {
         let luminance: Double = 1 - (0.299 * Double(rgbComponents.red) + 0.587 * Double(rgbComponents.green) + 0.114 * Double(rgbComponents.blue)) / 255.0
         
