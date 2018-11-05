@@ -266,7 +266,7 @@ open class SwipeCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(otherCellWantsToSwipeOpen), name: NSNotification.Name(rawValue: "SwipeCellOpenNotification"), object: nil)
     }
     
-    private func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         
         //        if gestureRecognizer.view != otherGestureRecognizer.view {
         //            return false
